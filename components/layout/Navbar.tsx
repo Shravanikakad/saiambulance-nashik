@@ -149,7 +149,7 @@ export default function Navbar() {
                 hover:shadow-lg
                 "
               >
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 min-w-0">
                   <Phone size={18} />
                   9766940298
                 </div>
@@ -220,7 +220,7 @@ export default function Navbar() {
               top-0
               right-0
               h-full
-              w-[340px] max-w-[85vw]
+              w-[280px] max-w-[80vw]
               bg-white
               shadow-2xl
               z-50
@@ -232,42 +232,43 @@ export default function Navbar() {
           >
             {/* Header */}
 
-            <div className="flex items-center justify-between px-6 py-5 border-b">
+          <div className="flex items-center justify-between px-4 py-3 border-b">
 
-              <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 min-w-0">
 
-                <Image
-                  src="/images/sai-ambulance-logo.png"
-                  alt="Sai Ambulance"
-                  width={60}
-                  height={60}
-                  className="w-16 h-16 object-contain"
-                />
+              <Image
+                src="/images/sai-ambulance-logo.png"
+                alt="Sai Ambulance"
+                width={44}
+                height={44}
+                className="w-11 h-11 object-contain shrink-0"
+              />
 
-                <div>
+              <div className="leading-tight">
 
-                  <h2 className="text-xl font-extrabold text-black">
-                    Sai Ambulance
-                  </h2>
+                <h2 className="text-base font-extrabold text-black whitespace-nowrap">
+                  Sai Ambulance
+                </h2>
 
-                  <p className="text-base font-semibold text-red-600">
-                    Nashik
-                  </p>
-
-                </div>
+                <p className="text-sm font-semibold text-red-600">
+                  Nashik
+                </p>
 
               </div>
 
-              <button
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <X
-                    size={30}
-                    className="text-gray-700 hover:text-red-600 transition"
-                />
-              </button>
-
             </div>
+
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              className="ml-3 shrink-0"
+            >
+              <X
+                size={24}
+                className="text-gray-700 hover:text-red-600 transition"
+              />
+            </button>
+
+          </div>
 
             {/* Links */}
 
