@@ -24,33 +24,32 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+  const handleScroll = () => {
+    setScrolled(window.scrollY > 20);
 
-      const sections = document.querySelectorAll("section[id]");
+    const sections = document.querySelectorAll<HTMLElement>("section");
 
-      sections.forEach((section) => {
-        const top = section.offsetTop - 120;
-        const height = section.offsetHeight;
-        const id = section.getAttribute("id");
+    sections.forEach((section) => {
+      const top = section.offsetTop - 120;
+      const height = section.offsetHeight;
+      const id = section.getAttribute("id");
 
-        if (
-          window.scrollY >= top &&
-          window.scrollY < top + height &&
-          id
-        ) {
-          setActiveSection(id);
-        }
-      });
-    };
+      if (
+        window.scrollY >= top &&
+        window.scrollY < top + height &&
+        id
+      ) {
+        setActiveSection(id);
+      }
+    });
+  };
 
-    window.addEventListener("scroll", handleScroll);
+  window.addEventListener("scroll", handleScroll);
 
-    handleScroll();
+  handleScroll();
 
-    return () =>
-      window.removeEventListener("scroll", handleScroll);
-  }, []);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   return (
     <>
