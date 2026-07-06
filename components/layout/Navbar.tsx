@@ -157,7 +157,7 @@ export default function Navbar() {
               </a>
 
               <a
-                href="tel:+9096455468"
+                href="tel:+918888264450"
                 className="
                 px-7
                 py-3.5
@@ -173,7 +173,7 @@ export default function Navbar() {
               >
                 <div className="flex items-center gap-3">
                   <Phone size={18} />
-                  9096455468
+                  8888264450
                 </div>
               </a>
 
@@ -326,7 +326,7 @@ export default function Navbar() {
                 "
               >
                 <Phone size={18} />
-                9766840298
+                9766940298
               </a>
 
               <a
