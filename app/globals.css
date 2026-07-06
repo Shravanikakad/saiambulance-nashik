@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* ===================================
+   Premium Button Hover Effect
+=================================== */
+
+.btn-premium {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.btn-premium:hover {
+  transform: translateY(-4px);
+}
+
+.btn-premium::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.25),
+    transparent
+  );
+  transform: translateX(-120%);
+  transition: transform .7s ease;
+}
+
+.btn-premium:hover::before {
+  transform: translateX(120%);
+}
