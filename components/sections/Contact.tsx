@@ -114,14 +114,14 @@ export default function Contact() {
               </a>
 
               <a
-                href="tel:+919096455468"
+                href="tel:+918888264450"
                 className="flex justify-center items-center gap-2 text-sm md:text-base font-semibold text-gray-900 hover:text-red-600 transition"
               >
                 <Phone
                   size={17}
                   className="text-red-600"
                 />
-                +91 90964 55468
+                +91 8888264450
               </a>
 
             </div>
@@ -166,7 +166,7 @@ export default function Contact() {
               </a>
 
               <a
-                href="https://wa.me/919096455468"
+                href="https://wa.me/918888264450"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex justify-center items-center gap-2 text-sm md:text-base font-semibold text-gray-900 hover:text-green-600 transition"
@@ -175,7 +175,7 @@ export default function Contact() {
                   size={17}
                   className="text-green-600"
                 />
-                Chat on 90964 55468
+                Chat on 8888264450
               </a>
 
             </div>

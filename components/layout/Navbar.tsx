@@ -330,7 +330,7 @@ export default function Navbar() {
               </a>
 
               <a
-                href="tel:+919096455468"
+                href="tel:+918888264450"
                 className="
                   flex
                   items-center
@@ -347,7 +347,7 @@ export default function Navbar() {
                 "
               >
                 <Phone size={18} />
-                9096455468
+                8888264450
               </a>
 
             </div>
