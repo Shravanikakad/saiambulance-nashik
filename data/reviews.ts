@@ -11,7 +11,7 @@ export const reviews = [
 
   {
     id: 2,
-    name: "Sneha Patil",
+    name: "Nishant",
     location: "Bihar",
     rating: 5,
     date: "1 month ago",

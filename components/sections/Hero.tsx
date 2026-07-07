@@ -112,6 +112,7 @@ export default function Hero() {
                   href="https://wa.me/919766940298?text=Emergency%20Ambulance%20Required"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Chat on WhatsApp"
                   className="
                   btn-premium
                   bg-green-500
@@ -203,10 +204,12 @@ export default function Hero() {
               className="absolute inset-0"
             >
               <Image
-                src="/images/resize ambulance.png"
+                src="/images/resize ambulance.webp"
                 alt="Sai Ambulance Nashik"
                 fill
+                quality={90}
                 priority
+                fetchPriority="high"
                 className="object-cover object-center"
               />
             </motion.div>
@@ -302,6 +305,7 @@ export default function Hero() {
                   href="https://wa.me/919766940298?text=Emergency%20Ambulance%20Required"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Chat on WhatsApp"
                   className="
                   btn-premium
                   bg-green-500

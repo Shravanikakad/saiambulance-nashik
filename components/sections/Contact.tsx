@@ -156,6 +156,7 @@ export default function Contact() {
                 href="https://wa.me/919766940298"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Chat on WhatsApp"
                 className="flex justify-center items-center gap-2 text-sm md:text-base font-semibold text-gray-900 hover:text-green-600 transition"
               >
                 <MessageCircle
@@ -169,6 +170,7 @@ export default function Contact() {
                 href="https://wa.me/918888264450"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Chat on WhatsApp"
                 className="flex justify-center items-center gap-2 text-sm md:text-base font-semibold text-gray-900 hover:text-green-600 transition"
               >
                 <MessageCircle
