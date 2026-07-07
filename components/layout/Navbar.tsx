@@ -24,32 +24,32 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
-  const handleScroll = () => {
-    setScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
 
-    const sections = document.querySelectorAll<HTMLElement>("section");
+      const sections = document.querySelectorAll<HTMLElement>("section");
 
-    sections.forEach((section) => {
-      const top = section.offsetTop - 120;
-      const height = section.offsetHeight;
-      const id = section.getAttribute("id");
+      sections.forEach((section) => {
+        const top = section.offsetTop - 120;
+        const height = section.offsetHeight;
+        const id = section.getAttribute("id");
 
-      if (
-        window.scrollY >= top &&
-        window.scrollY < top + height &&
-        id
-      ) {
-        setActiveSection(id);
-      }
-    });
-  };
+        if (
+          window.scrollY >= top &&
+          window.scrollY < top + height &&
+          id
+        ) {
+          setActiveSection(id);
+        }
+      });
+    };
 
-  window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-  handleScroll();
+    handleScroll();
 
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
@@ -61,9 +61,9 @@ export default function Navbar() {
             : "bg-white"
         }`}
       >
-        <div className="max-w-[1600px] mx-auto px-8">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
 
-          <div className="h-20 md:h-24 flex items-center justify-between">
+          <div className="h-16 sm:h-20 md:h-24 flex items-center justify-between gap-3">
 
             {/* ===========================
                   LOGO
@@ -71,7 +71,7 @@ export default function Navbar() {
 
             <Link
               href="/"
-              className="flex items-center gap-3 shrink-0"
+              className="flex items-center gap-2 sm:gap-3 min-w-0"
             >
               <Image
                 src="/images/sai-ambulance-logo.png"
@@ -79,16 +79,16 @@ export default function Navbar() {
                 width={84}
                 height={84}
                 priority
-                className="w-30 h-30 object-contain"
+                className="w-10 h-10 sm:w-14 sm:h-14 md:w-20 md:h-20 object-contain shrink-0"
               />
 
-             <div className="leading-tight">
+              <div className="leading-tight min-w-0">
 
-                <h1 className="text-4xl font-bold text-black tracking-tight">
+                <h1 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black tracking-tight truncate">
                   Sai Ambulance
                 </h1>
 
-                <p className="text-2xl font-bold text-red-600 mt-1">
+                <p className="text-sm sm:text-lg md:text-xl lg:text-2xl font-bold text-red-600 mt-0.5 sm:mt-1">
                   Nashik
                 </p>
 
@@ -129,10 +129,10 @@ export default function Navbar() {
             </nav>
 
             {/* ===========================
-                 RIGHT BUTTONS
+                 RIGHT BUTTONS (DESKTOP)
             ============================ */}
 
-            <div className="hidden lg:flex items-center gap-3">
+            <div className="hidden lg:flex items-center gap-3 shrink-0">
 
               <a
                 href="tel:+919766940298"
@@ -182,17 +182,28 @@ export default function Navbar() {
               MOBILE MENU BUTTON
             ============================ */}
 
-            <button
-              onClick={() =>
-                setMobileMenuOpen(true)
-              }
-              className="lg:hidden p-2"
-            >
-              <Menu
-                size={30}
-                className="text-black"
-              />
-            </button>
+            {/* Compact call button + hamburger on mobile so the phone number is
+                still one tap away without needing to open the drawer */}
+            <div className="flex lg:hidden items-center gap-1.5 shrink-0">
+              <a
+                href="tel:+919766940298"
+                className="p-2.5 rounded-full bg-red-600 text-white shadow-md active:scale-95 transition"
+                aria-label="Call Sai Ambulance"
+              >
+                <Phone size={20} />
+              </a>
+
+              <button
+                onClick={() => setMobileMenuOpen(true)}
+                className="p-2 shrink-0"
+                aria-label="Open menu"
+              >
+                <Menu
+                  size={26}
+                  className="text-black"
+                />
+              </button>
+            </div>
 
           </div>
 
@@ -232,47 +243,48 @@ export default function Navbar() {
           >
             {/* Header */}
 
-          <div className="flex items-center justify-between px-4 py-3 border-b">
+            <div className="flex items-center justify-between px-4 py-3 border-b">
 
-            <div className="flex items-center gap-2 min-w-0">
+              <div className="flex items-center gap-2 min-w-0">
 
-              <Image
-                src="/images/sai-ambulance-logo.png"
-                alt="Sai Ambulance"
-                width={44}
-                height={44}
-                className="w-11 h-11 object-contain shrink-0"
-              />
+                <Image
+                  src="/images/sai-ambulance-logo.png"
+                  alt="Sai Ambulance"
+                  width={44}
+                  height={44}
+                  className="w-9 h-9 object-contain shrink-0"
+                />
 
-              <div className="leading-tight">
+                <div className="leading-tight min-w-0">
 
-                <h2 className="text-base font-extrabold text-black whitespace-nowrap">
-                  Sai Ambulance
-                </h2>
+                  <h2 className="text-sm font-extrabold text-black truncate">
+                    Sai Ambulance
+                  </h2>
 
-                <p className="text-sm font-semibold text-red-600">
-                  Nashik
-                </p>
+                  <p className="text-xs font-semibold text-red-600">
+                    Nashik
+                  </p>
+
+                </div>
 
               </div>
 
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="ml-3 shrink-0 p-1"
+                aria-label="Close menu"
+              >
+                <X
+                  size={22}
+                  className="text-gray-700 hover:text-red-600 transition"
+                />
+              </button>
+
             </div>
-
-            <button
-              onClick={() => setMobileMenuOpen(false)}
-              className="ml-3 shrink-0"
-            >
-              <X
-                size={24}
-                className="text-gray-700 hover:text-red-600 transition"
-              />
-            </button>
-
-          </div>
 
             {/* Links */}
 
-            <div className="flex flex-col py-6">
+            <div className="flex flex-col py-4">
 
               {navLinks.map((item) => (
 
@@ -283,13 +295,13 @@ export default function Navbar() {
                     setMobileMenuOpen(false)
                   }
                   className={`
-                    px-7
-                    py-4
-                    text-[17px]
+                    px-6
+                    py-3.5
+                    text-[16px]
                     font-semibold
                     rounded-xl
                     mx-3
-                    my-1
+                    my-0.5
                     transition
                     ${
                       activeSection ===
@@ -306,7 +318,7 @@ export default function Navbar() {
 
             </div>
 
-            <div className="mt-auto px-6 py-5 space-y-4 border-t">
+            <div className="mt-auto px-5 py-5 space-y-3 border-t">
 
               <a
                 href="tel:+919766940298"
