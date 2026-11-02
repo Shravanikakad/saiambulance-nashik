@@ -106,7 +106,9 @@ export default function Reviews() {
         >
 
           <a
-            href="#"
+            href="https://share.google/0a97i5ik1QxjWexG8"
+            target="_blank"
+            rel="noopener noreferrer"
             className="
               w-full
               sm:w-auto
@@ -126,7 +128,9 @@ export default function Reviews() {
           </a>
 
           <a
-            href="#"
+            href="https://share.google/0a97i5ik1QxjWexG8"
+            target="_blank"
+            rel="noopener noreferrer"
             className="
               w-full
               sm:w-auto
